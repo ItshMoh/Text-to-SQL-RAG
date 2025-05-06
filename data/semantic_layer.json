@@ -1,0 +1,70 @@
+{
+    "database": {
+      "technical_name": "mydatabase",
+      "human_name": "Sales and Customer Database",
+      "description": "Contains information about customer orders and details."
+    },
+    "tables": [
+      {
+        "technical_name": "orders",
+        "human_names": ["Orders", "Sales Records", "Transactions"],
+        "description": "Records of customer orders.",
+        "columns": [
+          {
+            "technical_name": "order_id",
+            "human_names": ["Order ID", "ID"],
+            "description": "Unique identifier for an order.",
+            "data_type": "INTEGER"
+          },
+          {
+            "technical_name": "customer_id",
+            "human_names": ["Customer ID"],
+            "description": "Identifier linking to the customers table.",
+            "data_type": "INTEGER"
+          },
+          {
+            "technical_name": "order_date",
+            "human_names": ["Order Date", "Date"],
+            "description": "The date the order was placed.",
+            "data_type": "TEXT"
+          },
+          {
+            "technical_name": "amount",
+            "human_names": ["Sale Amount", "Order Total", "Price"],
+            "description": "The total amount of the order in USD.",
+            "data_type": "REAL"
+          }
+        ]
+      },
+      {
+        "technical_name": "customers",
+        "human_names": ["Customers", "Clients"],
+        "description": "Information about individual customers.",
+        "columns": [
+          {
+            "technical_name": "customer_id",
+            "human_names": ["Customer ID", "ID"],
+            "description": "Unique identifier for a customer.",
+            "data_type": "INTEGER"
+          },
+          {
+            "technical_name": "name",
+            "human_names": ["Customer Name", "Name"],
+            "description": "The customer's full name.",
+            "data_type": "TEXT"
+          },
+          {
+            "technical_name": "state",
+            "human_names": ["State", "Region"],
+            "description": "The customer's state of residence.",
+            "data_type": "TEXT",
+            "value_map": {
+              "CA": "California",
+              "NY": "New York",
+              "TX": "Texas"
+            }
+          }
+        ]
+      }
+    ]
+  }
