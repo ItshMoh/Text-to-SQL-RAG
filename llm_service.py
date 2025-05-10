@@ -140,6 +140,7 @@ You have retrieved the following relevant data:
 {retrieved_data}
 ---
 Based on the user's question and the provided data, synthesize a clear and concise natural language answer.
+The data you will be given be the result of the query user asked. Sometimes it just contain the answer of the query. So also consider it as relevant data.
 If the data is empty or irrelevant, state that you could not find relevant information related to the question in the provided data.
 Do not include the SQL query, table names, column names, or other technical database details in the final answer.
 Present the information in a user-friendly way.
