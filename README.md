@@ -12,6 +12,8 @@ A core component is the **Semantic Layer**, which provides a user-friendly abstr
 
 The backend is developed in Python, utilizing Large Language Models (LLMs) like Google Gemini for the translation and generation tasks. A vector database is used to enhance the RAG process. A separate frontend (planned using Angular) will provide the user interface.
 
+## Image of the bot in action
+![Bot resultin the Answer regarding the query](public/text_2_sql_rag_result_sc.png)
 ## Key Features
 
 *   **Natural Language Querying:** Users ask questions in plain English.
@@ -56,7 +58,7 @@ The system follows a RAG pipeline:
 
 1. **Clone the repository:**
 ```bash
-git clone <repository_url>
+git clone <https://github.com/ItshMoh/Text-to-SQL-RAG.git>
 cd text-to-sql-rag
 ```
 2. **Create a virtual environment (Recommended):**
