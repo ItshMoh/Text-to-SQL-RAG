@@ -3,22 +3,11 @@ from chromadb.utils import embedding_functions
 import config
 import llm_service # To use the embedding model defined there
 
-# Use the embedding function corresponding to the Gemini model
-# Chroma can use Google's embedding API directly if configured.
-# For this example, we'll generate embeddings via llm_service and pass them.
-# A more direct way if Chroma supports the specific Gemini embedding model:
-# google_ef = embedding_functions.GoogleEmbeddingFunction(api_key=config.GOOGLE_API_KEY)
-# For simplicity mirroring the llm_service, we'll generate manually for now.
+
 
 client = chromadb.PersistentClient(path=config.CHROMA_DB_PATH)
 
 try:
-    # Get or create a collection
-    # Note: Creating/getting collection requires an embedding function if you
-    # want Chroma to handle embedding internally. If passing embeddings,
-    # you might use a NullEmbeddingFunction or a specific one that matches yours.
-    # Let's create without specifying one here, and pass embeddings directly.
-    # If you want Chroma to embed, uncomment the line above and pass google_ef
     collection = client.get_or_create_collection(name="sql_results")
 
 except Exception as e:
@@ -88,12 +77,12 @@ def retrieve_data_from_vector_db(query_text: str, n_results: int = 5):
         results = collection.query(
             query_embeddings=[query_embedding],
             n_results=n_results
-            # Optional: where_clause, include=['metadatas', 'documents', 'distances']
+         
         )
-        # The result structure is a bit nested, extract documents
+        # extracting documents
         retrieved_documents = results.get('documents', [[]])[0] if results else []
         print(f"Retrieved {len(retrieved_documents)} documents from vector DB.")
-        # print(f"Retrieved Docs: {retrieved_documents}") # Debugging
+        # print(f"Retrieved Docs: {retrieved_documents}") 
         return retrieved_documents
 
     except Exception as e:
