@@ -10,7 +10,7 @@ GEMINI_GENERATE_URL = "https://generativelanguage.googleapis.com/v1beta/models/{
 GEMINI_EMBED_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:embedContent"
 
 # Choose model names (as strings now)
-GEN_MODEL_NAME = 'gemini-pro' # Or 'gemini-1.5-flash-latest', 'gemini-1.5-pro-latest', etc.
+GEN_MODEL_NAME = 'gemini-2.0-flash' # Or 'gemini-1.5-flash-latest', 'gemini-1.5-pro-latest', etc.
 EMBEDDING_MODEL_NAME = 'embedding-001' # The standard embedding model name
 
 # --- Helper function to make the API call ---
