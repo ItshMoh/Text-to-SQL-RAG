@@ -53,9 +53,9 @@ def main():
 
         # --- Step 2: Execute SQL ---
         # Validate SQL (basic check)
-        if not sql_query.strip().lower().startswith(("select", "with")):
-             print("Generated text does not appear to be a SELECT or WITH SQL query. Aborting execution.")
-             continue
+        # if not sql_query.strip().lower().startswith(("select", "with")):
+        #      print("Generated text does not appear to be a SELECT or WITH SQL query. Aborting execution.")
+        #      continue
 
         results, column_names, db_error = database_service.execute_sql_query(sql_query)
 

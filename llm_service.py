@@ -99,11 +99,14 @@ SQL Query:
     if response_json and 'candidates' in response_json:
         try:
             generated_sql = response_json['candidates'][0]['content']['parts'][0]['text']
+            print("before stripping generated_sql ----------------- \n", generated_sql)
             # Clean up potential markdown or extra text
             generated_sql = generated_sql.strip()
             # Remove markdown code block if present
-            if generated_sql.startswith("```sql"):
-                 generated_sql = generated_sql[6:].strip()
+            # if generated_sql.startswith("```sql"):
+            #      generated_sql = generated_sql[6:].strip()
+            if generated_sql.startswith("```sqlite"):
+                 generated_sql = generated_sql[9:].strip()     
             if generated_sql.endswith("```"):
                  generated_sql = generated_sql[:-3].strip()
 
